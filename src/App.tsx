@@ -13,6 +13,8 @@ import { UsersPage } from "./components/UsersPage";
 import { RBACPage } from "./components/RBACPage";
 import { KPIManagementPage } from "./components/KPIManagementPage";
 import { DatabaseManagement } from "./components/DatabaseManagement";
+import { MobileHomeScreen } from "./components/MobileHomeScreen";
+import { MobileDashboard } from "./components/MobileDashboard";
 
 export default function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -20,6 +22,8 @@ export default function App() {
   const [selectedMonth, setSelectedMonth] = useState("11");
   const [selectedYear, setSelectedYear] = useState("2025");
   const [selectedBUId, setSelectedBUId] = useState<string | null>(null);
+  const [viewMode, setViewMode] = useState<"desktop" | "mobile">("mobile");
+  const [mobilePage, setMobilePage] = useState<"home" | "dashboard">("home");
 
   const handleLogin = () => {
     setIsLoggedIn(true);
@@ -40,13 +44,60 @@ export default function App() {
     setCurrentPage("dashboard");
   };
 
+  const handleMobileNavigate = (moduleId: string) => {
+    if (moduleId === 'dashboard') {
+      setMobilePage('dashboard');
+    }
+  };
+
+  const handleBackToMobileHome = () => {
+    setMobilePage('home');
+  };
+
   // If not logged in, show login page
   if (!isLoggedIn) {
     return <LoginPage onLogin={handleLogin} />;
   }
 
+  // Mobile view
+  if (viewMode === "mobile") {
+    return (
+      <div className="relative">
+        {mobilePage === 'home' ? (
+          <MobileHomeScreen onNavigate={handleMobileNavigate} />
+        ) : (
+          <div className="relative">
+            <MobileDashboard />
+            {/* Back button */}
+            <button
+              onClick={handleBackToMobileHome}
+              className="fixed top-4 left-4 z-50 bg-white text-gray-700 px-3 py-1.5 rounded-lg text-sm shadow-lg hover:bg-gray-50 border border-gray-200"
+            >
+              ← Back
+            </button>
+          </div>
+        )}
+        {/* View mode toggle - for demo purposes */}
+        <button
+          onClick={() => setViewMode("desktop")}
+          className="fixed top-4 right-4 z-50 bg-blue-600 text-white px-3 py-1.5 rounded-lg text-sm shadow-lg hover:bg-blue-700"
+        >
+          Desktop View
+        </button>
+      </div>
+    );
+  }
+
   return (
     <div className="flex h-screen bg-gray-50">
+      {/* View mode toggle - for demo purposes */}
+      <button
+        onClick={() => setViewMode("mobile")}
+        className="fixed top-4 right-4 z-50 bg-blue-600 text-white px-3 py-1.5 rounded-lg text-sm shadow-lg hover:bg-blue-700"
+      >
+        Mobile View
+      </button>
+
       {/* Sidebar */}
       <Sidebar currentPage={currentPage} onNavigate={setCurrentPage} />
 
