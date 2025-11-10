@@ -1,0 +1,120 @@
+BU MANAGEMENT SYSTEM - FILES TO EXPORT TO REPLIT
+=================================================
+
+📋 CHECKLIST - Copy tất cả các files sau sang Replit:
+
+ROOT LEVEL FILES:
+☐ App.tsx
+☐ package.json
+☐ tsconfig.json
+☐ vite.config.ts
+☐ .replit
+☐ README.md
+☐ DATABASE_DOCUMENTATION.md
+☐ REPLIT_SETUP.md
+☐ EXPORT_GUIDE.md
+☐ FILES_TO_EXPORT.txt (file này)
+
+COMPONENTS (Main Pages):
+☐ components/Dashboard.tsx
+☐ components/BusinessUnitsPage.tsx
+☐ components/BUPerformancePage.tsx
+☐ components/EmployeeManagement.tsx
+☐ components/FixedCostManagement.tsx
+☐ components/ReportingAnalytics.tsx
+☐ components/RBACPage.tsx
+☐ components/KPIManagementPage.tsx
+☐ components/DatabaseManagement.tsx
+☐ components/ConnectionTest.tsx
+
+COMPONENTS/UI (Shadcn - ~30 files):
+☐ components/ui/accordion.tsx
+☐ components/ui/alert-dialog.tsx
+☐ components/ui/alert.tsx
+☐ components/ui/aspect-ratio.tsx
+☐ components/ui/avatar.tsx
+☐ components/ui/badge.tsx
+☐ components/ui/breadcrumb.tsx
+☐ components/ui/button.tsx
+☐ components/ui/calendar.tsx
+☐ components/ui/card.tsx
+☐ components/ui/carousel.tsx
+☐ components/ui/chart.tsx
+☐ components/ui/checkbox.tsx
+☐ components/ui/collapsible.tsx
+☐ components/ui/command.tsx
+☐ components/ui/context-menu.tsx
+☐ components/ui/dialog.tsx
+☐ components/ui/drawer.tsx
+☐ components/ui/dropdown-menu.tsx
+☐ components/ui/form.tsx
+☐ components/ui/hover-card.tsx
+☐ components/ui/input-otp.tsx
+☐ components/ui/input.tsx
+☐ components/ui/label.tsx
+☐ components/ui/menubar.tsx
+☐ components/ui/navigation-menu.tsx
+☐ components/ui/pagination.tsx
+☐ components/ui/popover.tsx
+☐ components/ui/progress.tsx
+☐ components/ui/radio-group.tsx
+☐ components/ui/resizable.tsx
+☐ components/ui/scroll-area.tsx
+☐ components/ui/select.tsx
+☐ components/ui/separator.tsx
+☐ components/ui/sheet.tsx
+☐ components/ui/sidebar.tsx
+☐ components/ui/skeleton.tsx
+☐ components/ui/slider.tsx
+☐ components/ui/sonner.tsx
+☐ components/ui/switch.tsx
+☐ components/ui/table.tsx
+☐ components/ui/tabs.tsx
+☐ components/ui/textarea.tsx
+☐ components/ui/toast.tsx
+☐ components/ui/toaster.tsx
+☐ components/ui/toggle-group.tsx
+☐ components/ui/toggle.tsx
+☐ components/ui/tooltip.tsx
+☐ components/figma/ImageWithFallback.tsx (nếu có)
+
+SERVICES:
+☐ services/api.ts
+
+UTILS:
+☐ utils/supabase/info.tsx
+
+STYLES:
+☐ styles/globals.css
+
+BACKEND (Supabase Functions):
+☐ supabase/functions/server/index.tsx
+☐ supabase/functions/server/kv_helper.tsx
+☐ supabase/functions/server/kv_store.tsx (PROTECTED - copy nhưng KHÔNG edit)
+☐ supabase/functions/server/database-schema.tsx
+☐ supabase/functions/server/demo-data.tsx
+☐ supabase/functions/server/query-helpers.tsx
+
+=================================================
+TỔNG: Khoảng 60-70 files cần export
+=================================================
+
+📝 NOTES:
+1. Sau khi copy xong, check lại cấu trúc folder
+2. Đảm bảo tất cả imports đúng path
+3. Update Supabase credentials trong Replit Secrets
+4. Update /utils/supabase/info.tsx với project ID mới
+5. Test chạy frontend: npm run dev
+6. Test chạy backend: npm run server
+7. Import demo data via UI hoặc API
+
+🎯 PRIORITY ORDER:
+1. Root files (package.json, tsconfig.json, etc.)
+2. Backend files (server/)
+3. Services & Utils
+4. Main components
+5. UI components
+6. Styles
+7. Documentation
+
+Good luck! 🚀
