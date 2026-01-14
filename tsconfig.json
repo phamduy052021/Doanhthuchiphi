@@ -26,15 +26,21 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "@/components/*": ["./src/frontend/components/*"],
-      "@/lib/*": ["./src/frontend/lib/*"],
-      "@/utils/*": ["./src/frontend/utils/*"],
-      "@/services/*": ["./src/frontend/services/*"],
-      "@/shared/*": ["./src/shared/*"],
-      "@/backend/*": ["./src/backend/*"]
+      "@/components/*": ["./src/components/*"],
+      "@/lib/*": ["./src/lib/*"],
+      "@/services/*": ["./src/services/*"],
+      "@/hooks/*": ["./src/hooks/*"]
     }
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules", "build", "dist"],
+  "exclude": [
+    "node_modules",
+    "build",
+    "dist",
+    "src/frontend",
+    "src/backend",
+    "src/shared",
+    "supabase"
+  ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

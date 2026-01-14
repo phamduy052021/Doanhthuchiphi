@@ -9,12 +9,10 @@ export default defineConfig({
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
     alias: {
       '@': path.resolve(__dirname, './src'),
-      '@/components': path.resolve(__dirname, './src/frontend/components'),
-      '@/lib': path.resolve(__dirname, './src/frontend/lib'),
-      '@/utils': path.resolve(__dirname, './src/frontend/utils'),
-      '@/services': path.resolve(__dirname, './src/frontend/services'),
-      '@/shared': path.resolve(__dirname, './src/shared'),
-      '@/backend': path.resolve(__dirname, './src/backend'),
+      '@/components': path.resolve(__dirname, './src/components'),
+      '@/lib': path.resolve(__dirname, './src/lib'),
+      '@/services': path.resolve(__dirname, './src/services'),
+      '@/hooks': path.resolve(__dirname, './src/hooks'),
     },
   },
   root: './',
@@ -35,6 +33,6 @@ export default defineConfig({
     cors: true,
   },
   optimizeDeps: {
-    include: ['react', 'react-dom', 'hono'],
+    include: ['react', 'react-dom', 'axios', 'hls.js'],
   },
 });
